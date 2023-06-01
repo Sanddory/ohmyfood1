@@ -1,0 +1,21 @@
+.Grp3 ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+@media (max-width: 800px) {
+  .Grp3 ol {
+    flex-direction: column;
+  }
+}
+.Grp3 li {
+  background-color: #f6f6f6;
+  padding: 1rem 2rem;
+  border: 1px solid red;
+  flex-grow: 1;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
+}
+.Grp3 li:hover {
+  transform: scale(1.02);
+}/*# sourceMappingURL=Grp3.css.map */
