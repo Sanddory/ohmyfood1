@@ -1,21 +1,42 @@
+.Grp3 {
+  counter-reset: steps;
+}
 .Grp3 ol {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
 }
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   .Grp3 ol {
     flex-direction: column;
   }
 }
 .Grp3 li {
+  position: relative;
+  list-style-type: none;
   background-color: #f6f6f6;
-  padding: 1rem 2rem;
-  border: 1px solid red;
+  padding: 1.5rem 2rem;
   flex-grow: 1;
   border-radius: 1rem;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
 }
+.Grp3 li::before {
+  content: counter(steps);
+  counter-increment: steps;
+  color: white;
+  background-color: #9356dc;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 1rem;
+  left: -1rem;
+}
 .Grp3 li:hover {
   transform: scale(1.02);
+}
+.Grp3 li i.fas {
+  margin-right: 1rem;
+  color: #7e7e7e;
 }/*# sourceMappingURL=Grp3.css.map */
