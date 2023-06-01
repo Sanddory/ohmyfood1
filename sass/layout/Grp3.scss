@@ -5,6 +5,7 @@
 
 .Grp3 {
     counter-reset: steps;
+    margin-bottom: 2rem;
     & ol {
         display: flex;
         gap: 2rem;
@@ -25,8 +26,10 @@
             place-items: center;
             border-radius: 50%;
             position: absolute;
-            bottom: 1rem;
             left: -1rem;
+            bottom: 50%;
+            transform: translateY(50%);
+
         }
         list-style-type: none;
         background-color: #f6f6f6;

@@ -12,7 +12,26 @@ body {
 }
 
 main {
-  padding: 0 1rem;
+  padding: 0 7rem;
+}
+@media (max-width: 1000px) {
+  main {
+    padding: 0 1rem;
+  }
+}
+
+h2 {
+  padding: 2rem 0;
+  margin: 0;
+}
+
+h3, p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 header {
@@ -41,7 +60,6 @@ header {
   text-align: center;
 }
 .explorer h2 {
-  margin-top: 2rem;
   font-size: 2rem;
 }
 .explorer p {
@@ -66,6 +84,7 @@ header {
 
 .Grp3 {
   counter-reset: steps;
+  margin-bottom: 2rem;
 }
 .Grp3 ol {
   display: flex;
@@ -96,8 +115,9 @@ header {
   place-items: center;
   border-radius: 50%;
   position: absolute;
-  bottom: 1rem;
   left: -1rem;
+  bottom: 50%;
+  transform: translateY(50%);
 }
 .Grp3 li:hover {
   transform: scale(1.02);
@@ -105,4 +125,81 @@ header {
 .Grp3 li i.fas {
   margin-right: 1rem;
   color: #7e7e7e;
+}
+
+.menus {
+  background-color: #D2D2D2;
+  margin-bottom: 2rem;
+}
+.menus .menus__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 1000px) {
+  .menus .menus__cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.menus .menus__cards .new {
+  position: relative;
+}
+.menus .menus__cards .new::before {
+  content: "Nouveau";
+  position: absolute;
+  height: 2rem;
+  width: 5rem;
+  background-color: #99e2d0;
+  color: #008766;
+  display: grid;
+  place-items: center;
+  right: 1rem;
+  top: 1rem;
+  border-radius: 2px;
+}
+.menus .card__image {
+  height: 15rem;
+  border-radius: 1rem 1rem 0 0;
+  background-size: cover;
+}
+.menus .card__image-1 {
+  background-image: url("../../assets/menu-1.jpg");
+}
+.menus .card__image-2 {
+  background-image: url("../../assets/menu-2.jpg");
+}
+.menus .card__image-3 {
+  background-image: url("../../assets/menu-3.jpg");
+}
+.menus .card__image-4 {
+  background-image: url("../../assets/menu-4.jpg");
+}
+.menus .card__description {
+  position: relative;
+  background-color: #FFFFFF;
+  border-radius: 0 0 1rem 1rem;
+}
+.menus .card__description p, .menus .card__description h3 {
+  padding: 0.3rem;
+}
+.menus .card i {
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+footer {
+  background-color: #353535;
+  padding: 1rem 2rem;
+  color: white;
+}
+footer h2 {
+  font-family: "shrikhand", "sans-serif";
+  font-weight: 500;
+  padding: 1rem 0;
+}
+footer p {
+  padding: 0.2rem;
 }/*# sourceMappingURL=style.css.map */
