@@ -1,15 +1,26 @@
-@use "../utils/box-shadow.scss";
-@use "../utils/zoom.scss";
+@use "../utils/mixins.scss";
 @use "../utils/colors.scss";
-
+@use "../utils/variables.scss";
 
 .Grp3 {
     counter-reset: steps;
     margin-bottom: 2rem;
+    background-color: #FFFFFF;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    margin-left: -9rem;
+    padding-left: 9rem;
+    margin-right: -9rem;
+    padding-right: 9rem;
+    padding-bottom: 1rem;
+    @media (max-width: variables.$breakpoint) {
+        margin-right: -1rem;
+        padding-right: 2rem;
+    }
     & ol {
         display: flex;
         gap: 2rem;
-        @media (max-width: 1000px) {
+        @media (max-width: variables.$breakpoint) {
             flex-direction: column;
         }
     }
@@ -36,9 +47,9 @@
         padding: 1.5rem 2rem;
         flex-grow: 1;
         border-radius: 1rem;
-        @include box-shadow.base-shadow;
+        @include mixins.box-shadow;
         &:hover {
-            @include zoom.transform-zoom;
+            @include mixins.transform-zoom;
         }
         & i.fas {
             margin-right: 1rem;

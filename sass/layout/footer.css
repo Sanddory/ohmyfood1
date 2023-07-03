@@ -8,6 +8,26 @@ footer h2 {
   font-weight: 500;
   padding: 1rem 0;
 }
+@media (min-width: 1000px) {
+  footer h2 {
+    order: 1;
+    padding: 0.5rem 0;
+  }
+}
 footer p {
   padding: 0.2rem;
+}
+@media (min-width: 1000px) {
+  footer p {
+    padding: 1rem 0;
+  }
+}
+@media (min-width: 1000px) {
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 1rem;
+  }
 }/*# sourceMappingURL=footer.css.map */

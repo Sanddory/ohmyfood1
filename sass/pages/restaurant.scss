@@ -1,0 +1,185 @@
+@use "../utils/mixins.scss";
+@use "../utils/variables.scss";
+@use "../utils/colors.scss";
+@use "../utils/animations.scss";
+
+
+
+body{
+    background-color: colors.$lightergrey;
+    @media (min-width: variables.$breakpoint) {
+        background-color: #f6f6f6;
+    }
+}
+
+.corps{
+    background-color: colors.$lightergrey;
+    @media (min-width: variables.$breakpoint) {
+        background-color: #FFFFFF;
+    }
+}
+
+#page-resto {
+    header {
+        &:hover::before {
+            @include mixins.transform-zoom($zoom-level:1.20, $transformation:translateY(-50%));
+        }
+        &::before {
+            @include mixins.font-awesome;
+            content: "\f060";
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            transition: transform 200ms;
+        }
+    }
+    .banner img {
+        display: block;
+        width: 100%;
+        height: 60vh;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .resto__title {
+        margin-top: -2rem;
+        @media (min-width: variables.$breakpoint) {
+        padding: 0px 15%;
+        }
+        h2 {
+            font-family:"Shrikhand","sans-serif";
+            padding: 2rem 1rem; 
+            @include mixins.heart-animated;
+            border-radius: 2rem 2rem 0 0;
+            background-color: colors.$lightergrey;
+        }
+    }  
+
+    .resto-main {
+        padding: 0 1rem;
+        @media (min-width: variables.$breakpoint) {
+            padding-left: 15%;
+            padding-right: 15%;
+        }
+    }
+
+    .menus {  
+        display: grid;
+        gap: 2rem;
+        @media (max-width: variables.$breakpoint) {
+            grid-template-columns: 1fr;
+        }
+        @media (min-width: variables.$breakpoint) {
+            background-color: #F6F6F6F6;
+            padding-left: 25%;
+            padding-right: 25%;
+        }
+        h3 {
+            text-transform: uppercase;
+            font-weight: 400;
+            position: relative;
+            margin-bottom: 1rem;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 1.5rem;
+                left: 0rem;
+                height: 0.25rem;
+                width: 3rem;
+                background-color: colors.$colors-tertiary;
+            }
+        }
+        .menus__category {
+            border-radius: 1rem;
+            overflow: hidden;
+            
+            .menu-item {
+                @for $i from 1 through 3 {
+                    &:nth-child(#{$i}) {
+                        animation-delay: 100ms * $i;
+                    }
+                }
+                background: #FFFFFF;
+                display: flex;
+                border-radius: 1rem;
+                overflow: hidden;
+                margin: 0.5rem;
+                box-shadow: 0px 4.011494159698486px 15.043103218078613px 0px rgba(0, 0, 0, 0.1);
+                animation: appear 1s;
+                animation-fill-mode: both;
+                .menu-item__price{
+                    margin-left: auto;
+                    font-weight: 900;
+                    padding: 1rem;
+                    display: flex;
+                    align-items: flex-end;
+                }
+                .menu-item__description {
+                    padding: 1rem;
+                    overflow: hidden;
+                    h4, p {
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                }
+                .menu-item__check {
+                    display: grid;
+                    place-items: center;
+                    flex-shrink: 0;
+                    $button-width: 4rem;
+                    border-radius: 0 1rem 1rem 0;
+                    background-color: colors.$colors-tertiary;
+                    margin-right: -$button-width;
+                    width: $button-width;
+                    transition: margin-right 0.5s;
+                    i {
+                        $size: 1rem;
+                        display: grid;
+                        place-items:center;
+                        background: white;
+                        height: $size;
+                        width: $size;
+                        border-radius: 1rem;
+                        color: colors.$colors-tertiary;
+                    }
+                }
+                &:hover { 
+                    cursor: pointer;
+                    .menu-item__check {
+                        margin-right: 0;
+                    }
+                    i {
+                        @include animations.quarterspin;
+                        animation: quarterspin 0.5s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+
+    section.order {
+        height: 25vh;
+        display: grid;
+        place-items: center;
+        button {
+            @include mixins.base-button;
+        }
+        @media (min-width: variables.$breakpoint) {
+            background-color: #F6F6F6;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
